@@ -3,8 +3,10 @@ package ufpb.minicurso.laboratorio2.services;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -148,5 +150,11 @@ public class DisciplinaService {
 		disciplinaRepository.save(disciplina.get());
 		
 		return new TagResponseDTO(disciplina.get());
+	}
+
+	public List<NotaResponseDTO> findAllOrderByNotas() {
+		List<Disciplina> list = disciplinaRepository.findAll();
+		List<NotaResponseDTO> listDTO = list.stream().map(x -> new NotaResponseDTO(x)).collect(Collectors.toList());
+		return listDTO.stream().sorted(Comparator.comparingDouble(NotaResponseDTO::getMedia).reversed()).collect(Collectors.toList());	
 	}
 }

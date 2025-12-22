@@ -77,4 +77,11 @@ public class DisciplinaResource {
 		TagResponseDTO disciplinaTag = disciplinaService.addTag(id, tag);
 		return ResponseEntity.ok().body(disciplinaTag);
 	}
+	
+	@GetMapping("/ranking/notas")
+	public ResponseEntity<List<NotaResponseDTO>> findAllOrderByNotas() {
+		List<NotaResponseDTO> list = disciplinaService.findAllOrderByNotas();
+		
+		return ResponseEntity.ok().body(list);
+	}
 }
