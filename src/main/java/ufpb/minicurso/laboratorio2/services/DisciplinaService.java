@@ -157,4 +157,16 @@ public class DisciplinaService {
 		List<NotaResponseDTO> listDTO = list.stream().map(x -> new NotaResponseDTO(x)).collect(Collectors.toList());
 		return listDTO.stream().sorted(Comparator.comparingDouble(NotaResponseDTO::getMedia).reversed()).collect(Collectors.toList());	
 	}
+	
+	public List<LikeResponseDTO> findAllOrderByLikes() {
+		List<Disciplina> list = disciplinaRepository.findAll();
+		List<LikeResponseDTO> listDTO = list.stream().map(x -> new LikeResponseDTO(x)).collect(Collectors.toList());
+		return listDTO.stream().sorted(Comparator.comparingInt(LikeResponseDTO::getLikes).reversed()).collect(Collectors.toList());	
+	}
+
+	public List<Tag> findByTagId(Long id) {
+		Optional<Disciplina> disciplina = disciplinaRepository.findById(id);
+		List<Tag> tags = disciplina.get().getTags().stream().map(x -> new Tag(x.getId(), x.getNome())).collect(Collectors.toList());
+		return tags;
+	}
 }

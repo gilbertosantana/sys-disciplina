@@ -23,14 +23,22 @@ import ufpb.minicurso.laboratorio2.dto.NotaResponseDTO;
 import ufpb.minicurso.laboratorio2.dto.TagRequestDTO;
 import ufpb.minicurso.laboratorio2.dto.TagResponseDTO;
 import ufpb.minicurso.laboratorio2.entities.Disciplina;
+import ufpb.minicurso.laboratorio2.entities.Tag;
+import ufpb.minicurso.laboratorio2.repositories.DisciplinaRepository;
 import ufpb.minicurso.laboratorio2.services.DisciplinaService;
 
 @RestController
 @RequestMapping("/api/disciplinas")
 public class DisciplinaResource {
 
+    private final DisciplinaRepository disciplinaRepository;
+
 	@Autowired
 	private DisciplinaService disciplinaService;
+
+    DisciplinaResource(DisciplinaRepository disciplinaRepository) {
+        this.disciplinaRepository = disciplinaRepository;
+    }
 	
 	@GetMapping
 	public ResponseEntity<List<DisciplinaDTO>> findAll() {
@@ -80,8 +88,19 @@ public class DisciplinaResource {
 	
 	@GetMapping("/ranking/notas")
 	public ResponseEntity<List<NotaResponseDTO>> findAllOrderByNotas() {
-		List<NotaResponseDTO> list = disciplinaService.findAllOrderByNotas();
-		
+		List<NotaResponseDTO> list = disciplinaService.findAllOrderByNotas();	
 		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/ranking/likes")
+	public ResponseEntity<List<LikeResponseDTO>> findAllOrderByLikes() {
+		List<LikeResponseDTO> list = disciplinaService.findAllOrderByLikes();	
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping("/{id}/tags")
+	public ResponseEntity<List<Tag>> findByTagId(@PathVariable Long id) {
+		List<Tag> tags = disciplinaService.findByTagId(id);
+		return ResponseEntity.ok().body(tags);
 	}
 }
