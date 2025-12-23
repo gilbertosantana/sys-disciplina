@@ -24,21 +24,14 @@ import ufpb.minicurso.laboratorio2.dto.TagRequestDTO;
 import ufpb.minicurso.laboratorio2.dto.TagResponseDTO;
 import ufpb.minicurso.laboratorio2.entities.Disciplina;
 import ufpb.minicurso.laboratorio2.entities.Tag;
-import ufpb.minicurso.laboratorio2.repositories.DisciplinaRepository;
 import ufpb.minicurso.laboratorio2.services.DisciplinaService;
 
 @RestController
 @RequestMapping("/api/disciplinas")
 public class DisciplinaResource {
 
-    private final DisciplinaRepository disciplinaRepository;
-
 	@Autowired
 	private DisciplinaService disciplinaService;
-
-    DisciplinaResource(DisciplinaRepository disciplinaRepository) {
-        this.disciplinaRepository = disciplinaRepository;
-    }
 	
 	@GetMapping
 	public ResponseEntity<List<DisciplinaDTO>> findAll() {
@@ -102,5 +95,12 @@ public class DisciplinaResource {
 	public ResponseEntity<List<Tag>> findByTagId(@PathVariable Long id) {
 		List<Tag> tags = disciplinaService.findByTagId(id);
 		return ResponseEntity.ok().body(tags);
+	}
+	
+	@GetMapping("/tags")
+	public ResponseEntity<List<DisciplinaDTO>> findByDisciplinaAssociadaPorTag(@RequestParam(required = true) String str) {
+		List<DisciplinaDTO> disciplinaDTO = disciplinaService.findByDisciplinaAssociadaPorTag(str);
+		
+		return ResponseEntity.ok().body(disciplinaDTO);
 	}
 }

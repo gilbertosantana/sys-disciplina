@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -51,6 +53,11 @@ public class Tag implements Serializable{
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	@JsonIgnore
+	public Set<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
 	@Override

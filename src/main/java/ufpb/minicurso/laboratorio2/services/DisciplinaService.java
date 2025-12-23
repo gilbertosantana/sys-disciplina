@@ -3,10 +3,10 @@ package ufpb.minicurso.laboratorio2.services;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -168,5 +168,18 @@ public class DisciplinaService {
 		Optional<Disciplina> disciplina = disciplinaRepository.findById(id);
 		List<Tag> tags = disciplina.get().getTags().stream().map(x -> new Tag(x.getId(), x.getNome())).collect(Collectors.toList());
 		return tags;
+	}
+
+	public List<DisciplinaDTO> findByDisciplinaAssociadaPorTag(String str) {
+		Tag tag = tagRepository.findByNome(str);
+		List<Disciplina> disciplina = disciplinaRepository.findAll();
+		List<DisciplinaDTO> disciplinaDTO = new ArrayList<>();
+		
+		for (Disciplina d : disciplina) {
+			if(d.getTags().contains(tag)) {
+				disciplinaDTO.add(new DisciplinaDTO(d));
+			}
+		}
+		return disciplinaDTO;
 	}
 }
