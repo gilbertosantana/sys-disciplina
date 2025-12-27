@@ -53,62 +53,62 @@ public class TestConfig implements CommandLineRunner{
 		Disciplina d25 = disciplinaRepository.findById(25L).get();
 		
 		Comentario c1  = new Comentario(null, LocalDateTime.now(), "Disciplina horrível e professor pior ainda!!!", false, d1);
-		Comentario c2  = new Comentario(null, LocalDateTime.now(), "Conteúdo muito confuso e mal explicado.", false, d2);
-		Comentario c3  = new Comentario(null, LocalDateTime.now(), "Disciplina difícil, mas o professor tenta ajudar.", false, d3);
-		Comentario c4  = new Comentario(null, LocalDateTime.now(), "Aulas longas e cansativas, pouco aprendizado.", false, d4);
-		Comentario c5  = new Comentario(null, LocalDateTime.now(), "Boa disciplina, mas avaliação muito pesada.", false, d5);
-		Comentario c6  = new Comentario(null, LocalDateTime.now(), "Professor explica bem, porém passa muitos trabalhos.", false, d6);
-		Comentario c7  = new Comentario(null, LocalDateTime.now(), "Conteúdo interessante, aulas poderiam ser mais dinâmicas.", false, d7);
-		Comentario c8  = new Comentario(null, LocalDateTime.now(), "Disciplina desorganizada e sem cronograma definido.", false, d8);
-		Comentario c9  = new Comentario(null, LocalDateTime.now(), "Aprendi bastante, apesar da dificuldade.", false, d9);
-		Comentario c10 = new Comentario(null, LocalDateTime.now(), "Professor muito rígido e pouco acessível.", false, d10);
-		Comentario c11 = new Comentario(null, LocalDateTime.now(), "Boa didática, mas matéria muito extensa.", false, d11);
-		Comentario c12 = new Comentario(null, LocalDateTime.now(), "Disciplina fundamental para o curso.", false, d12);
-		Comentario c13 = new Comentario(null, LocalDateTime.now(), "Pouca aplicação prática do conteúdo.", false, d13);
-		Comentario c14 = new Comentario(null, LocalDateTime.now(), "Aulas claras e bem estruturadas.", false, d14);
-		Comentario c15 = new Comentario(null, LocalDateTime.now(), "Professor domina o assunto, porém explica rápido demais.", false, d15);
-		Comentario c16 = new Comentario(null, LocalDateTime.now(), "Disciplina repetitiva e pouco motivadora.", false, d16);
-		Comentario c17 = new Comentario(null, LocalDateTime.now(), "Bom equilíbrio entre teoria e prática.", false, d17);
-		Comentario c18 = new Comentario(null, LocalDateTime.now(), "Avaliações justas e conteúdo relevante.", false, d18);
-		Comentario c19 = new Comentario(null, LocalDateTime.now(), "Professor não demonstra interesse em ensinar.", false, d19);
-		Comentario c20 = new Comentario(null, LocalDateTime.now(), "Disciplina complicada, exige muito estudo fora da sala.", false, d20);
-		Comentario c21 = new Comentario(null, LocalDateTime.now(), "Conteúdo desatualizado em relação ao mercado.", false, d21);
-		Comentario c22 = new Comentario(null, LocalDateTime.now(), "Disciplina interessante, mas mal organizada.", false, d22);
-		Comentario c23 = new Comentario(null, LocalDateTime.now(), "Professor acessível e disposto a tirar dúvidas.", false, d23);
-		Comentario c24 = new Comentario(null, LocalDateTime.now(), "Aulas teóricas demais e pouca prática.", false, d24);
-		Comentario c25 = new Comentario(null, LocalDateTime.now(), "Uma das melhores disciplinas do curso.", false, d25);
+		Comentario c2  = new Comentario(null, LocalDateTime.now(), "Conteúdo muito confuso e mal explicado.", false, d1);
+		Comentario c3  = new Comentario(null, LocalDateTime.now(), "Disciplina difícil, mas o professor tenta ajudar.", false, d1);
+		Comentario c4  = new Comentario(null, LocalDateTime.now(), "Aulas longas e cansativas, pouco aprendizado.", false, d1);
+		Comentario c5  = new Comentario(null, LocalDateTime.now(), "Boa disciplina, mas avaliação muito pesada.", false, d1);
+		Comentario c6  = new Comentario(null, LocalDateTime.now(), "Professor explica bem, porém passa muitos trabalhos.", false, d2);
+		Comentario c7  = new Comentario(null, LocalDateTime.now(), "Conteúdo interessante, aulas poderiam ser mais dinâmicas.", false, d2);
+		Comentario c8  = new Comentario(null, LocalDateTime.now(), "Disciplina desorganizada e sem cronograma definido.", false, d2);
+		Comentario c9  = new Comentario(null, LocalDateTime.now(), "Aprendi bastante, apesar da dificuldade.", false, d3);
+		Comentario c10 = new Comentario(null, LocalDateTime.now(), "Professor muito rígido e pouco acessível.", false, d3);
+		Comentario c11 = new Comentario(null, LocalDateTime.now(), "Boa didática, mas matéria muito extensa.", false, d3);
+		Comentario c12 = new Comentario(null, LocalDateTime.now(), "Disciplina fundamental para o curso.", false, d3);
+		Comentario c13 = new Comentario(null, LocalDateTime.now(), "Pouca aplicação prática do conteúdo.", false, d3);
+		Comentario c14 = new Comentario(null, LocalDateTime.now(), "Aulas claras e bem estruturadas.", false, d3);
+		Comentario c15 = new Comentario(null, LocalDateTime.now(), "Professor domina o assunto, porém explica rápido demais.", false, d4);
+		Comentario c16 = new Comentario(null, LocalDateTime.now(), "Disciplina repetitiva e pouco motivadora.", false, d4);
+		Comentario c17 = new Comentario(null, LocalDateTime.now(), "Bom equilíbrio entre teoria e prática.", false, d4);
+		Comentario c18 = new Comentario(null, LocalDateTime.now(), "Avaliações justas e conteúdo relevante.", false, d5);
+		Comentario c19 = new Comentario(null, LocalDateTime.now(), "Professor não demonstra interesse em ensinar.", false, d5);
+		Comentario c20 = new Comentario(null, LocalDateTime.now(), "Disciplina complicada, exige muito estudo fora da sala.", false, d5);
+		Comentario c21 = new Comentario(null, LocalDateTime.now(), "Conteúdo desatualizado em relação ao mercado.", false, d5);
+		Comentario c22 = new Comentario(null, LocalDateTime.now(), "Disciplina interessante, mas mal organizada.", false, d5);
+		Comentario c23 = new Comentario(null, LocalDateTime.now(), "Professor acessível e disposto a tirar dúvidas.", false, d5);
+		Comentario c24 = new Comentario(null, LocalDateTime.now(), "Aulas teóricas demais e pouca prática.", false, d5);
+		Comentario c25 = new Comentario(null, LocalDateTime.now(), "Uma das melhores disciplinas do curso.", false, d5);
 		
 		comentarioRepository.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25));
 		
 		Random r = new Random();
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d1.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d3.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d5.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d10.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d13.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d15.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d20.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d23.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d25.addLike();
 		}
-		for(int i = 0; i < r.nextInt(30); i++) {
+		for(int i = 0; i < r.nextInt(50); i++) {
 			d7.addLike();
 		}
 		disciplinaRepository.saveAll(Arrays.asList(d1, d3, d5, d10, d13, d15, d20, d23, d25, d7));
